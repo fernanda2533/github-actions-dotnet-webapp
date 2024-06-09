@@ -3,8 +3,6 @@ name: Dotnet Build Webapp
 on:
   push:
     branches: [ main ]
-  schedule:
-    - cron: 0 * * * *
 
 jobs:
   build-and-deploy:
