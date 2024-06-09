@@ -3,18 +3,18 @@ on: push
 
 jobs:
   continuos-integration:
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
       - name: Using node.js
-      uses: actions/steup-node@v2
-      with:
-        node-version: 16.
+        uses: actions/steup-node@v2
+        with:
+          node-version: 16.
       - name: run install, build and test
-      run: |
-        npm install
-        npm run build
-        npm run test
+        run: |
+          npm install
+          npm run build
+          npm run test
 
       
