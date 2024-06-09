@@ -1,23 +1,20 @@
-name: Dotnet Build Webapp
-
-on:
-  push:
-    branches: [ main ]
+name: integracao continua
+on: push
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+  continuos-integration:
+    runs-on:ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Instalar Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.x
-
-        run: npm install
-        run: npm build
-        run: npm test
+    stesp:
+      - uses: actions/checkout@v3
+      - name: Using node.js
+      uses: actions/steup-node@v2
+      with:
+        node-version: 16.
+      - name: run install, build and test
+      run: |
+        npm install
+        npm run build
+        npm run test
 
       
