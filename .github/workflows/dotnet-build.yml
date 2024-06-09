@@ -9,12 +9,12 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-13    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: Setup Node.js
-14    - name: Run build and deploy script
+      - name: Run build and deploy script
         with:
           node-version: '16'
-15      run: |
+        run: |
         npm install
         npm run build
         npm run test
