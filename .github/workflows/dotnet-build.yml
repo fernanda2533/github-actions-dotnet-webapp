@@ -1,18 +1,18 @@
-name: integracao continua
-on: push
-
-jobs:
-  continuos-integration:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/steup-node@v2
-        with:
-          node-version: 16.
-      - name: run install, build and test
-        run: |
+on:
+2   push:
+3     branches:
+4      - main
+5  schedule:
+6    - cron: 0 * * * *
+7
+8  jobs:
+9  build-and-deploy:
+10    runs-on: ubuntu-latest
+11    steps:
+12      - name: Checkout code
+13        uses: actions/checkout@v2
+14      - name: Run build and deploy script
+15        run: |
           npm install
           npm run build
           npm run test
