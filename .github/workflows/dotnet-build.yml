@@ -1,0 +1,30 @@
+name: Dotnet Build Webapp
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: 0 * * * *
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Build do Webapp
+        run: npm run build
+
+      - name: Testar Webapp
+        run: npm test
+
+      
