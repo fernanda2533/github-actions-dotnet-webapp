@@ -12,6 +12,8 @@ jobs:
 13    - uses: actions/checkout@v3
       - name: Setup Node.js
 14    - name: Run build and deploy script
+        with:
+          node-version: '16'
 15      run: |
         npm install
         npm run build
