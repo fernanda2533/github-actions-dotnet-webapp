@@ -5,7 +5,7 @@ jobs:
   continuos-integration:
     runs-on:ubuntu-latest
 
-    stesp:
+    steps:
       - uses: actions/checkout@v3
       - name: Using node.js
       uses: actions/steup-node@v2
