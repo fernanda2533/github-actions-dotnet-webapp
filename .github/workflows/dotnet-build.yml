@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node.js
         with:
           node-version: '16'
-      - uses: Run build and deploy script
+      - name: Run build and deploy script
         run: pm install; npm run build; npm run test
 
       
